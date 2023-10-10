@@ -66,4 +66,8 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.5.0")
 //Databinding
     implementation("androidx.databinding:databinding-runtime:7.1.2")
+
+    //Images
+    implementation("com.squareup.picasso:picasso:2.71828")
+
 }
