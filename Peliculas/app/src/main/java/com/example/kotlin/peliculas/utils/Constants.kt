@@ -1,4 +1,4 @@
-package com.example.kotlin.peliculas
+package com.example.kotlin.peliculas.utils
 
 import android.graphics.pdf.PdfDocument.Page
 

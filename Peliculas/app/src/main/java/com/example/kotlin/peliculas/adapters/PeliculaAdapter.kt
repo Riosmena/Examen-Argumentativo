@@ -1,8 +1,10 @@
-package com.example.kotlin.peliculas
+package com.example.kotlin.peliculas.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kotlin.peliculas.model.PeliculaBase
+import com.example.kotlin.peliculas.adapters.viewholders.PeliculaViewHolder
 import com.example.kotlin.peliculas.databinding.ItemPeliculaBinding
 
 class PeliculaAdapter: RecyclerView.Adapter<PeliculaViewHolder>() {

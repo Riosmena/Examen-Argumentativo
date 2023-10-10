@@ -1,6 +1,6 @@
-package com.example.kotlin.peliculas
+package com.example.kotlin.peliculas.model
 
-import com.example.kotlin.peliculas.pelicula.Pelicula
+import com.example.kotlin.peliculas.utils.Constants
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
