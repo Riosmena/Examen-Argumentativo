@@ -1,4 +1,4 @@
-package com.example.kotlin.peliculas.model
+package com.example.kotlin.peliculas.data.network
 
 import com.example.kotlin.peliculas.utils.Constants
 import okhttp3.OkHttpClient
