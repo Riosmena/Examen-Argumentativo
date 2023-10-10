@@ -1,6 +1,6 @@
-package com.example.kotlin.peliculas.pelicula
+package com.example.kotlin.peliculas.model.pelicula
 
-import com.example.kotlin.peliculas.pelicula.Result
+import com.example.kotlin.peliculas.model.pelicula.Result
 
 data class Pelicula(
     val page: Int,

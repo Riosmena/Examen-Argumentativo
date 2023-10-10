@@ -1,10 +1,15 @@
-package com.example.kotlin.peliculas
+package com.example.kotlin.peliculas.views
 
 import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.kotlin.peliculas.utils.Constants
+import com.example.kotlin.peliculas.adapters.PeliculaAdapter
 import com.example.kotlin.peliculas.databinding.ActivityMainBinding
+import com.example.kotlin.peliculas.model.PeliculaBase
+import com.example.kotlin.peliculas.model.PeliculaRepository
+import com.example.kotlin.peliculas.model.PeliculasObject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -31,7 +36,10 @@ class MainActivity: Activity() {
     private fun getPopularMovies(){
         CoroutineScope(Dispatchers.IO).launch {
             val peliculaRepository = PeliculaRepository()
-            val result:PeliculasObject? = peliculaRepository.getPopularMovies(Constants.APIKEY, Constants.PAGE)
+            val result: PeliculasObject? = peliculaRepository.getPopularMovies(
+                Constants.APIKEY,
+                Constants.PAGE
+            )
             Log.d("Salida", result?.page.toString())
             CoroutineScope(Dispatchers.Main).launch {
                 setUpRecyclerView(result?.results!!)

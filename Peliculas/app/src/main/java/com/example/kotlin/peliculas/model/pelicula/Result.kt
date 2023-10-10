@@ -1,4 +1,4 @@
-package com.example.kotlin.peliculas.pelicula
+package com.example.kotlin.peliculas.model.pelicula
 
 data class Result(
     val adult: Boolean,

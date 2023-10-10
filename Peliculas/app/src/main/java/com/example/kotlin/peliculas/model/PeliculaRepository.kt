@@ -1,7 +1,11 @@
-package com.example.kotlin.peliculas
+package com.example.kotlin.peliculas.model
+
+import com.example.kotlin.peliculas.model.NetworkModuleDI
+import com.example.kotlin.peliculas.model.PeliculaAPIService
+import com.example.kotlin.peliculas.model.PeliculasObject
 
 class PeliculaRepository() {
-    private lateinit var api:PeliculaAPIService
+    private lateinit var api: PeliculaAPIService
 
     suspend fun getPopularMovies(apiKey:String, page:Int): PeliculasObject? {
         api = NetworkModuleDI()
