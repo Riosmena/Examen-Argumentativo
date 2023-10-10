@@ -1,6 +1,6 @@
-package com.example.kotlin.peliculas.model
+package com.example.kotlin.peliculas.data.network
 
-import com.example.kotlin.peliculas.model.PeliculasObject
+import com.example.kotlin.peliculas.data.network.model.PeliculasObject
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Query

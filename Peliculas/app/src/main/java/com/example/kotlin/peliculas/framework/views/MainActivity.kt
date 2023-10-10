@@ -1,6 +1,5 @@
-package com.example.kotlin.peliculas.views
+package com.example.kotlin.peliculas.framework.views
 
-import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
@@ -10,9 +9,9 @@ import com.example.kotlin.peliculas.utils.Constants
 import com.example.kotlin.peliculas.adapters.PeliculaAdapter
 import com.example.kotlin.peliculas.databinding.ActivityMainBinding
 import com.example.kotlin.peliculas.model.PeliculaBase
-import com.example.kotlin.peliculas.model.PeliculaRepository
-import com.example.kotlin.peliculas.model.PeliculasObject
-import com.example.kotlin.peliculas.viewmodel.MainViewModel
+import com.example.kotlin.peliculas.data.PeliculaRepository
+import com.example.kotlin.peliculas.data.network.model.PeliculasObject
+import com.example.kotlin.peliculas.framework.viewmodel.MainViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
