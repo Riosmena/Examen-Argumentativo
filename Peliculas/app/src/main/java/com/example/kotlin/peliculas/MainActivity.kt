@@ -2,8 +2,12 @@ package com.example.kotlin.peliculas
 
 import android.app.Activity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kotlin.peliculas.databinding.ActivityMainBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class MainActivity: Activity() {
@@ -16,7 +20,7 @@ class MainActivity: Activity() {
         super.onCreate(savedInstanceState)
 
         initializeBinding()
-        setUpRecyclerView(testData())
+        getPopularMovies()
     }
 
     private fun initializeBinding() {
@@ -24,15 +28,15 @@ class MainActivity: Activity() {
         setContentView(binding.root)
     }
 
-    private fun testData():ArrayList<PeliculaBase>{
-        var result = ArrayList<PeliculaBase>()
-
-        result.add(PeliculaBase("The Nun II",""))
-        result.add(PeliculaBase("The Equalizer 3",""))
-        result.add(PeliculaBase("Sound of Freedom",""))
-
-        return result
-    }
+    private fun getPopularMovies(){
+        CoroutineScope(Dispatchers.IO).launch {
+            val peliculaRepository = PeliculaRepository()
+            val result:PeliculasObject? = peliculaRepository.getPopularMovies(Constants.APIKEY, Constants.PAGE)
+            Log.d("Salida", result?.page.toString())
+            CoroutineScope(Dispatchers.Main).launch {
+                setUpRecyclerView(result?.results!!)
+            }
+    }}
 
     private fun setUpRecyclerView(dataForList:ArrayList<PeliculaBase>){
         binding.RVPelicula.setHasFixedSize(true)
