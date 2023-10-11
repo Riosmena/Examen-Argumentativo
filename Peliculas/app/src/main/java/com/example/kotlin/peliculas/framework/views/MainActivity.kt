@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.kotlin.peliculas.utils.Constants
 import com.example.kotlin.peliculas.adapters.PeliculaAdapter
 import com.example.kotlin.peliculas.databinding.ActivityMainBinding
-import com.example.kotlin.peliculas.model.PeliculaBase
+import com.example.kotlin.peliculas.data.network.model.PeliculaBase
 import com.example.kotlin.peliculas.data.PeliculaRepository
 import com.example.kotlin.peliculas.data.network.model.PeliculasObject
 import com.example.kotlin.peliculas.framework.viewmodel.MainViewModel
@@ -58,11 +58,8 @@ class MainActivity: AppCompatActivity() {
 
     private fun setUpRecyclerView(dataForList:ArrayList<PeliculaBase>){
         binding.RVPelicula.setHasFixedSize(true)
-        val linearLayoutManager = LinearLayoutManager(
-            this,
-            LinearLayoutManager.VERTICAL,
-            false)
-        binding.RVPelicula.layoutManager = linearLayoutManager
+        val gridLayoutManager = GridLayoutManager(this, 3)
+        binding.RVPelicula.layoutManager = gridLayoutManager
         adapter.PeliculaAdapter(dataForList)
         binding.RVPelicula.adapter = adapter
     }
